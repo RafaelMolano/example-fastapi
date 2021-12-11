@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 from .config import settings
 
 #SQLALCHEMY_DATABASE_URL = "mysql://root:root@localhost/pythonapi?charset=utf8"
-SQLALCHEMY_DATABASE_URL = f"mysql://{settings.database_username}:{settings.database_password}@localhost/{settings.database_name}?charset=utf8"
+SQLALCHEMY_DATABASE_URL = f"mysql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}/{settings.database_name}?charset=utf8"
 engine = create_engine(SQLALCHEMY_DATABASE_URL, connect_args = {
         "port": settings.database_port
     })
